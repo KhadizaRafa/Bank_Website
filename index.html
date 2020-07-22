@@ -92,16 +92,28 @@
         document.getElementById('addDeposit').addEventListener('click',function()
         {
             const depositAmount = getInputNumber('depositAmount');
-            addAmount('oldDepositAmount',depositAmount);
-            addAmount('balance',depositAmount); 
+            if(depositAmount>0)
+            {
+                addAmount('oldDepositAmount',depositAmount);
+                addAmount('balance',depositAmount); 
+            }
+            else{
+                alert("Provide valid amount");
+            }
+            
         })
 
         //Withdraw
         document.getElementById('addWithdraw').addEventListener('click',function()
         {
             const withdrawAmount = getInputNumber('withdrawAmount');
-            addAmount('oldWithdrawAmount',withdrawAmount);
-            addAmount('balance',-1*withdrawAmount); 
+            if(withdrawAmount>0){
+                addAmount('oldWithdrawAmount',withdrawAmount);
+                addAmount('balance',-1*withdrawAmount); 
+            }
+            else{
+                alert("Provide valid amount");
+            }
             
         })
 
